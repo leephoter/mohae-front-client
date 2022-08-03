@@ -42,7 +42,7 @@ export default function Register({ text }: Props) {
     e.preventDefault();
     axios
       .post(
-        `${ENDPOINT}/auth/signin`,
+        `${ENDPOINT}auth/signin`,
         { email: inputValue.id, password: inputValue.password },
         {
           headers: {

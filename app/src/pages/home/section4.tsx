@@ -12,7 +12,6 @@ import {
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../redux/root';
 import { AppDispatch } from '../../redux/root';
-
 interface Props {
   [key: string]: any;
 }

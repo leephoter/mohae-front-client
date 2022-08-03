@@ -15,8 +15,9 @@ import { Resign, LoginModal } from '../';
 import { RootState, AppDispatch } from '../../redux/root';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
-import { Profile } from '../../pages/';
+import { Profile, Spec } from '../../pages/';
+import Edit from '../spec/Edit';
 
 export default function HG() {
-  return <Profile />;
+  return <Edit />;
 }

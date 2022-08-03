@@ -12,12 +12,9 @@ interface Props {
 
 export default function Part3(props: Props) {
   const [imgs, setImgs] = useState([
-      'img/notion.png',
-      'img/medium.png',
-      'img/notion.png',
-      'img/medium.png',
-      'img/notion.png',
-      'img/medium.png',
+      '/img/screen2.png',
+      '/img/screen3.png',
+      '/img/screen1.png',
     ]),
     [target, setTarget] = useState(1),
     move = `translateX(${-(target - 1) * 456}px)`;

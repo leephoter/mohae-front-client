@@ -52,10 +52,10 @@ export default function Edit() {
     e.stopPropagation();
     addImages.append('title', value.title && value.title);
     addImages.append('description', value.description && value.description);
-    const iterator = addImages.entries();
-    console.log('data ', iterator.next());
-    console.log('data ', iterator.next());
-    console.log('data ', iterator.next());
+    // const iterator = addImages.entries();
+    // console.log('data ', iterator.next());
+    // console.log('data ', iterator.next());
+    // console.log('data ', iterator.next());
     // console.log('data ', iterator.next());
     // console.log('data ', iterator.next());
     // console.log('data ', iterator.next());
@@ -84,6 +84,70 @@ export default function Edit() {
   const reset = (e: React.MouseEvent) => {
     dispatch(spec_create(false));
   };
+
+  const style = css`
+    width: 100%;
+    height: 100%;
+    ${radius[24]};
+    padding: 48px 84px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    > .title {
+      font-size: 28px;
+      height: 36px;
+      ${font.weight[700]};
+      color: ${color.dark1};
+      line-height: 130%;
+    }
+    > .wrapper {
+      display: flex;
+      justify-content: space-between;
+      .box {
+        width: 100%;
+        height: 100%;
+        padding: 8px;
+      }
+      .texts {
+        > * {
+          margin: 8px;
+          color: ${color.dark1};
+        }
+        .title {
+          font-size: 18px;
+          display: flex;
+          align-items: center;
+          height: 23px;
+          margin-bottom: 16px;
+        }
+        .description {
+          width: calc(288px + 8px);
+          height: 316px;
+          overflow: auto;
+          font-size: 14px;
+          box-sizing: content-box;
+          padding-right: calc(8px + 8px);
+        }
+
+        > .footer {
+          > .number {
+            > :first-child {
+              color: ${`${
+                value.description.length < text.maxNum ? '#4F4E5C' : color.main
+              }`};
+            }
+          }
+          .complete {
+            width: 74px;
+            height: 43px;
+          }
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+  `;
 
   return (
     <BasicModal big visible={isOpen} reset={reset}>
@@ -119,7 +183,7 @@ export default function Edit() {
 
               <div className={'footer'}>
                 <div className={'number'}>
-                  <span>{'?'}</span>
+                  <span>{value.description.length}</span>
                   <span>{'/'}</span>
                   <span>{text.maxNum}</span>
                 </div>
@@ -134,60 +198,3 @@ export default function Edit() {
     </BasicModal>
   );
 }
-
-const style = css`
-  width: 100%;
-  height: 100%;
-  ${radius[24]};
-  padding: 48px 84px 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  > .title {
-    font-size: 28px;
-    height: 36px;
-    ${font.weight[700]};
-    color: ${color.dark1};
-    line-height: 130%;
-  }
-  > .wrapper {
-    display: flex;
-    justify-content: space-between;
-    .box {
-      width: 100%;
-      height: 100%;
-      padding: 8px;
-    }
-    .texts {
-      > * {
-        margin: 8px;
-        color: ${color.dark1};
-      }
-      .title {
-        font-size: 18px;
-        display: flex;
-        align-items: center;
-        height: 23px;
-        margin-bottom: 16px;
-      }
-      .description {
-        width: calc(288px + 8px);
-        height: 316px;
-        overflow: auto;
-        font-size: 14px;
-        box-sizing: content-box;
-        padding-right: calc(8px + 8px);
-      }
-
-      > .footer {
-        .complete {
-          width: 74px;
-          height: 43px;
-        }
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-    }
-  }
-`;

@@ -18,15 +18,15 @@ export default function Spec() {
             <div className={'box'}>
               <OrderedImg
                 edit
-                imgs={[
-                  'img/camera.png',
-                  'img/edit.png',
-                  'img/filter.png',
-                  'img/heart-main.png',
-                  'img/study.png',
-                  'img/send.png',
-                  'img/star-unfilled.png',
-                ]}
+                // imgs={[
+                //   'img/camera.png',
+                //   'img/edit.png',
+                //   'img/filter.png',
+                //   'img/heart-main.png',
+                //   'img/study.png',
+                //   'img/send.png',
+                //   'img/star-unfilled.png',
+                // ]}
               />
             </div>
           </Box>

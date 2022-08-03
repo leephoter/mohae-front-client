@@ -22,7 +22,6 @@ export default function MySelf({
   const TOKEN = getToken();
   const navigate = useNavigate();
   const tokenInfo: any = decodeToken(TOKEN);
-  console.log(`tokenInfo`, tokenInfo.photoUrl);
 
   const interested =
     userInfo && userInfo.categories ? (
@@ -38,6 +37,7 @@ export default function MySelf({
     ) : (
       <div>{'NULL'}</div>
     );
+  console.log('posts.profileSpecs :>> ', posts.profileSpecs);
 
   return (
     <div className={cx(style)}>
